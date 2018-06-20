@@ -1,12 +1,8 @@
-<html>
-<head>
-<title>Hal</title>
-</head>
+{% extends "base.html" %}
 
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
-<body>
-
-</body>
-</html>
-
-
+{% block content %}
+    <center><h1>Hello, {{ user.username }}!</h1></center>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}
